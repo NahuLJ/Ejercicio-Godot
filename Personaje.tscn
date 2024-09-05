@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bemhfwna4uh2w"]
+
+[ext_resource type="Script" path="res://personaje.gd" id="1_wokur"]
+[ext_resource type="Texture2D" uid="uid://bxwbkmvfpli50" path="res://che.jpg" id="2_hdt3x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1w8lk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hdt3x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba5wk"]
+size = Vector2(27.6667, 20.6667)
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(537, 338)
+script = ExtResource("1_wokur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_1w8lk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ba5wk")
